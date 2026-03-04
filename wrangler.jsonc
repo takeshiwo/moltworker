@@ -41,15 +41,14 @@
     "bindings": [
       {
         "class_name": "Sandbox",
-        "name": "SandboxV3"
+        "name": "Sandbox"
       }
     ]
   },
   "migrations": [
     {
-      "tag": "v5",
-      "new_sqlite_classes": [],
-      "migrated_unknown_classes": ["Sandbox"]
+      "tag": "v7",
+      "new_sqlite_classes": ["Sandbox"]
     }
   ],
   "r2_buckets": [
