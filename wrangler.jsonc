@@ -14,18 +14,6 @@
     "binding": "ASSETS",
     "run_worker_first": true
   },
-  "rules": [
-    {
-      "type": "Text",
-      "globs": ["**/*.html"],
-      "fallthrough": false
-    },
-    {
-      "type": "Data",
-      "globs": ["**/*.png"],
-      "fallthrough": false
-    }
-  ],
   "build": {
     "command": "npm run build"
   },
@@ -37,17 +25,17 @@
       "max_instances": 1
     }
   ],
-"durable_objects": {
+  "durable_objects": {
     "bindings": [
       {
         "class_name": "Sandbox",
-        "name": "MoltSandboxV2" 
+        "name": "Sandbox"
       }
     ]
   },
   "migrations": [
     {
-      "tag": "v9",
+      "tag": "v10",
       "new_sqlite_classes": [],
       "migrated_unknown_classes": ["Sandbox"]
     }
