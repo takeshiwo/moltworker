@@ -37,17 +37,17 @@
       "max_instances": 1
     }
   ],
-  "durable_objects": {
+"durable_objects": {
     "bindings": [
       {
         "class_name": "Sandbox",
-        "name": "Sandbox"
+        "name": "MoltSandbox" 
       }
     ]
   },
   "migrations": [
     {
-      "tag": "v7",
+      "tag": "v8",
       "new_sqlite_classes": ["Sandbox"]
     }
   ],
