@@ -60,8 +60,7 @@
   "migrations": [
     {
       "tag": "v4",
-      "new_sqlite_classes": [],
-      "migrated_unknown_classes": ["Sandbox"]
+      "new_sqlite_classes": ["Sandbox"]
     }
   ],
   "r2_buckets": [
