@@ -49,18 +49,19 @@
       }
     ]
   },
+"durable_objects": {
+    "bindings": [
+      {
+        "class_name": "Sandbox",
+        "name": "SandboxV2"
+      }
+    ]
+  },
   "migrations": [
     {
-      "tag": "v1",
-      "new_sqlite_classes": ["Sandbox"]
-    },
-    {
-      "tag": "v2",
-      "new_sqlite_classes": []
-    },
-    {
       "tag": "v4",
-      "new_sqlite_classes": []
+      "new_sqlite_classes": [],
+      "migrated_unknown_classes": ["Sandbox"]
     }
   ],
   "r2_buckets": [
