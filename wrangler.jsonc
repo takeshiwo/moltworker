@@ -45,24 +45,30 @@
     "bindings": [
       {
         "class_name": "Sandbox",
-        "name": "Sandbox",
-      },
-    ],
+        "name": "SandboxV2"
+      }
+    ]
   },
   "migrations": [
     {
-      "tag": "v3",
+      "tag": "v1",
+      "new_sqlite_classes": ["Sandbox"]
+    },
+    {
+      "tag": "v2",
       "new_sqlite_classes": []
     },
+    {
+      "tag": "v4",
+      "new_sqlite_classes": []
+    }
   ],
-  // R2 bucket for persistent storage (moltbot data, conversations, etc.)
   "r2_buckets": [
     {
       "binding": "MOLTBOT_BUCKET",
       "bucket_name": "moltbot-data6"
-    },
+    }
   ],
-
   // Browser Rendering binding for CDP shim
   "browser": {
     "binding": "BROWSER",
