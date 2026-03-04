@@ -5,61 +5,49 @@
   "compatibility_date": "2024-12-01",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
-    "enabled": true,
+    "enabled": true
   },
-  // Static assets for admin UI (built by vite)
   "assets": {
     "directory": "./dist/client",
     "not_found_handling": "single-page-application",
     "html_handling": "auto-trailing-slash",
     "binding": "ASSETS",
-    "run_worker_first": true,
+    "run_worker_first": true
   },
-  // Allow importing HTML files as text modules and PNG files as binary
   "rules": [
     {
       "type": "Text",
       "globs": ["**/*.html"],
-      "fallthrough": false,
+      "fallthrough": false
     },
     {
       "type": "Data",
       "globs": ["**/*.png"],
-      "fallthrough": false,
-    },
+      "fallthrough": false
+    }
   ],
-  // Build command for vite
   "build": {
-    "command": "npm run build",
+    "command": "npm run build"
   },
-  // Container configuration for the Moltbot sandbox
   "containers": [
     {
       "class_name": "Sandbox",
       "image": "./Dockerfile",
       "instance_type": "standard-1",
-      "max_instances": 1,
-    },
+      "max_instances": 1
+    }
   ],
   "durable_objects": {
     "bindings": [
       {
         "class_name": "Sandbox",
-        "name": "SandboxV2"
-      }
-    ]
-  },
-"durable_objects": {
-    "bindings": [
-      {
-        "class_name": "Sandbox",
-        "name": "SandboxV2"
+        "name": "SandboxV3"
       }
     ]
   },
   "migrations": [
     {
-      "tag": "v4",
+      "tag": "v5",
       "new_sqlite_classes": ["Sandbox"]
     }
   ],
@@ -69,10 +57,10 @@
       "bucket_name": "moltbot-data6"
     }
   ],
-  // Browser Rendering binding for CDP shim
   "browser": {
-    "binding": "BROWSER",
-  },
+    "binding": "BROWSER"
+  }
+},
   // Note: CF_ACCOUNT_ID should be set via `wrangler secret put CF_ACCOUNT_ID`
   // Secrets to configure via `wrangler secret put`:
   //
