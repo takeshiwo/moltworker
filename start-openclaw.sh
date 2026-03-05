@@ -237,18 +237,22 @@ if (process.env.TELEGRAM_BOT_TOKEN) {
 }
 
 // Discord configuration
-// Discord uses a nested dm object: dm.policy, dm.allowFrom (per DiscordDmConfig)
+// IMPORTANT: Merge with existing config to preserve guilds settings!
 if (process.env.DISCORD_BOT_TOKEN) {
     const dmPolicy = process.env.DISCORD_DM_POLICY || 'pairing';
     const dm = { policy: dmPolicy };
     if (dmPolicy === 'open') {
         dm.allowFrom = ['*'];
     }
+    // Preserve existing discord config (especially guilds!)
+    const existingDiscord = config.channels.discord || {};
     config.channels.discord = {
+        ...existingDiscord,
         token: process.env.DISCORD_BOT_TOKEN,
         enabled: true,
         dm: dm,
     };
+    console.log('Discord config merged, guilds preserved:', Object.keys(existingDiscord.guilds || {}).length > 0);
 }
 
 // Slack configuration
