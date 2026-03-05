@@ -40,7 +40,11 @@
       "migrated_unknown_classes": ["Sandbox"]
     }
   ],
-  "r2_buckets": [
+"r2_buckets": [
+    {
+      "binding": "R2_BUCKET",
+      "bucket_name": "moltbot-data6"
+    },
     {
       "binding": "MOLTBOT_BUCKET",
       "bucket_name": "moltbot-data6"
